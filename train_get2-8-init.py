@@ -187,7 +187,7 @@ class GPT(nn.Module):
 
         return model
 
-# model = GPT.from_pretrained('gpt2')
+model = GPT.from_pretrained('gpt2-xl')
 
 device = 'cpu'
 if torch.cuda.is_available():
@@ -239,7 +239,7 @@ class DataLoaderLite:
         return x, y
 
 
-model = GPT(GPTConfig())
+# model = GPT(GPTConfig())
 model.to(device)
 
 train_loader = DataLoaderLite(B = 4, T = 32)
